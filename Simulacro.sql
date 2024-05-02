@@ -2,6 +2,10 @@
 SELECT title FROM film
 ORDER BY  title ASC
 
+2
+SELECT DISTINCT rating FROM film
+ORDER BY rating ASC
+
 3
 
 4
