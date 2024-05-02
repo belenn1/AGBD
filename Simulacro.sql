@@ -7,6 +7,9 @@ SELECT DISTINCT rating FROM film
 ORDER BY rating ASC
 
 3
+SELECT title, rental_rate, rating FROM film
+WHERE rating LIKE "%PG%" 
+ORDER BY rental_rate DESC, title ASC
 
 4
 
