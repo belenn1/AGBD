@@ -13,6 +13,34 @@ SELECT e.first_name AS nomEmpleado,e.last_name AS ApellidoEmp, d.first_name AS n
 JOIN dependents d ON e.employee_id = d.employee_id
 ORDER BY d.first_name ASC
 
-SELECT first_name, job_title, max_salary FROM employees e
-JOIN jobs j ON e.employee_id = job_id
-ORDER BY max_salary ASC /*/ falta completar
+SELECT first_name, last_name, job_title, max_salary FROM employees e
+JOIN jobs j on e.job_id = j.job_id
+ORDER by max_salary DESC
+
+SELECT first_name, last_name, department_name, salary FROM employees e
+JOIN departments d on e.department_id = d.department_id
+ORDER by first_name, department_name ASC
+
+SELECT first_name, last_name, state_province FROM employees e
+JOIN departments d on e.department_id = e.department_id
+JOIN locations l on d.location_id = l.location_id
+ORDER by first_name, state_province ASC
+
+SELECT first_name, last_name, country_name, region_name FROM employees e
+JOIN departments d on e.department_id = d.department_id
+JOIN locations l on d.location_id = l.location_id
+JOIN countries c on l.country_id = c.country_id
+JOIN regions r on c.region_id = r.region_id
+ORDER by first_name ASC
+
+SELECT country_name, region_name FROM employees e
+JOIN departments d on e.department_id = d.department_id
+JOIN locations l on d.location_id = l.location_id
+JOIN countries c on l.country_id = c.country_id
+JOIN regions r on c.region_id = r.region_id
+ORDER by country_name, region_name DESC
+
+SELECT first_name, last_name, job_title, min_salary FROM employees e
+JOIN jobs j on e.job_id = j.job_id
+ORDER by min_salary DESC
+
