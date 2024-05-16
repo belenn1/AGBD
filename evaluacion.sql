@@ -14,6 +14,12 @@ LEFT JOIN drivers_license dl ON p.license_id = dl.id
 WHERE dl.id IS NULL
 
 4
+SELECT name AS Nombre, address_street_name AS Calle, address_number AS Num
+FROM person
+WHERE address_street_name == "Franklin Ave"
+ORDER BY address_number DESC
+LIMIT 1
+OFFSET 1
 
 5
 
