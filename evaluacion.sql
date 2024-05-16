@@ -16,20 +16,14 @@ WHERE dl.id IS NULL
 4
 SELECT name AS Nombre, address_street_name AS Calle, address_number AS Num
 FROM person
-WHERE address_street_name == "Franklin Ave"
+WHERE address_street_name LIKE "%Franklin Ave%"
 ORDER BY address_number DESC
-LIMIT 1
-OFFSET 1
 
 5
-SELECT min(age) AS Minima, max(age) AS Maxima, avg(age) AS Promedio
-FROM drivers_license
-WHERE gender == "female" AND id IS NOT NULL
+
 
 6
-SELECT  membership_status AS Categoria, count(id) AS cantXCat FROM get_fit_now_member
-GROUP BY membership_status
-ORDER BY cantXCat DESC
+
 
 7
 
